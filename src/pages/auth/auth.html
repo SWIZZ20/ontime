@@ -1,0 +1,22 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>authPage</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding style="background-color: rgb(248, 44, 129);">
+  <form [formGroup]="authForm" style="margin-top: 20%;">
+    <ion-item>
+      <ion-label>Email</ion-label>
+      <ion-input type="email" formControlName="email"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label>password</ion-label>
+        <ion-input type="password" formControlName="password"></ion-input>
+    </ion-item>
+    <button ion-button round full (click)="goToHomePage()">Valider</button>
+    <p >{{error}}</p>
+    <a ion-button clear *ngIf="type" (click)="presentAlert()" >Mot de passe oublié?</a>
+  </form>
+</ion-content>

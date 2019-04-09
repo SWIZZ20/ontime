@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <button ion-button (click)="close()">Fermer</button>
+      </ion-col>
+      <ion-col>
+        <ion-navbar>
+          <ion-title>{{cour.nom}}</ion-title>
+        </ion-navbar>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-header>
+<ion-content padding style="background-color: rgb(248, 44, 129);">
+  <ion-list>
+    <ion-item>
+      <div item-start>
+        <h2>{{cour.nom}}</h2>
+        <p><ion-icon name="person"></ion-icon> {{cour.professeur}}</p>
+      </div>
+      <div id="detail-cours">
+       <p><ion-icon name="time"></ion-icon> heure début: {{cour.heureDebut}} <br> heure de fin :{{cour.heureFin}}</p>
+       <p><ion-icon name="pin"></ion-icon> {{cour.salle}}</p> 
+      </div>
+    </ion-item>
+  </ion-list>
+</ion-content>

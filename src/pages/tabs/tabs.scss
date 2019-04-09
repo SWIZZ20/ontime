@@ -1,0 +1,19 @@
+page-tabs {
+    .tabs-md .tab-button[aria-selected=true] .tab-button-icon {
+        color: #f82c81;
+        -webkit-transform: translate3d(0, -2px, 0);
+        transform: translate3d(0, -2px, 0);
+    }
+
+    .tabs-md .tab-button[aria-selected=true] .tab-button-text {
+        -webkit-transform: scale3d(1.16667, 1.16667, 1);
+        transform: scale3d(1.16667, 1.16667, 1);
+        -webkit-transition: -webkit-transform 0.3s ease-in-out;
+        transition: -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+        color: #f82c81;
+    }
+    
+    
+}

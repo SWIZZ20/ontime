@@ -1,14 +1,47 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Accueil
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content padding style="background-color: rgb(248, 44, 129);">
+  <ion-list id="schoolTimeTable">
+    <ion-list-header>Emploi du Temps de la journnée</ion-list-header>
+    <button ion-item *ngFor="let cour of EmploiDuTemps; let i=index"
+    (click)="goToSingleSubjectsPage(cour)" primary>
+      <div item-start style="background-color: rgb(248, 44, 129); height: 50px;width: 50px; border-radius: 50%;"></div>
+      <div >
+        <h2>{{cour.nom}}</h2>
+        <ion-icon name="time"></ion-icon>
+        {{cour.heureDebut}} - {{cour.heureFin}}
+      </div>
+      <div item-end>
+          <ion-icon name="pin"></ion-icon>
+          Salle
+      </div>
+    </button>
+  </ion-list>
+
+  <ion-list>
+      <ion-list-header>Emploi du Temps d'Etude</ion-list-header>
+      <button ion-item *ngFor="let etude of EmploiEtude; let i=index"
+      (click)="goToSingleTaskPage(etude)">
+      <div item-start style="background-color: rgb(248, 44, 129); height: 50px;width: 50px; border-radius: 50%;"></div>
+      <div>
+          <h2>{{etude.nom}}</h2>
+          <ion-icon name="time"></ion-icon>
+          {{etude.heureDebut}} - {{etude.heureFin}}
+        </div>
+        <div item-end>
+          <ion-icon name="pin"></ion-icon>
+            Salle
+        </div>
+      </button>
+    </ion-list>
+  
+  <ion-fab bottom right edge style="margin-bottom:50px;">
+    <button ion-fab mini><ion-icon name="notifications-outline"></ion-icon></button>
+  </ion-fab>
 </ion-content>

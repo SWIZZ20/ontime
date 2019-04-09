@@ -1,19 +1,29 @@
+import { WelcomePage } from './../pages/welcome/welcome';
 import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import * as firebase from 'firebase';
 
-import { HomePage } from '../pages/home/home';
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = HomePage;
+  rootPage:any = WelcomePage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
-      // Okay, so the platform is ready and our plugins are available.
-      // Here you can do any higher level native things you might need.
+
+      let config = {
+        apiKey: "AIzaSyCRpmA6mipjQ7v_yU2P98zDLdGHchjHSwA",
+        authDomain: "timeapp-49d70.firebaseapp.com",
+        databaseURL: "https://timeapp-49d70.firebaseio.com",
+        projectId: "timeapp-49d70",
+        storageBucket: "timeapp-49d70.appspot.com",
+        messagingSenderId: "68310043430"
+      };
+      firebase.initializeApp(config);
+
       statusBar.styleDefault();
       splashScreen.hide();
     });

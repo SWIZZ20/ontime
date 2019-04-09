@@ -1,0 +1,19 @@
+page-auth {
+    .button-round-md {
+        border-radius: 64px;
+        padding: 0 2.6rem;
+        height: 50px;
+        margin-top: 20px;
+        background-color: white;
+        color: black;
+    }
+
+    .button-clear-md {
+        border-color: transparent;
+        color: white;
+        background-color: transparent;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        opacity: 1;
+    }
+}
