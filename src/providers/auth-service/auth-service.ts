@@ -1,9 +1,20 @@
 import { Injectable } from '@angular/core';
 import * as firebase from 'firebase';
+import DataSnapshot=firebase.database.DataSnapshot;
 
 @Injectable()
 export class AuthServiceProvider {
-
+  public userData=[];
+  public niveau=[{
+    nom:"1 TC" 
+  },
+  {
+    nom:"1 IG" 
+  },
+  {
+    nom:"1 MAN" 
+  }
+  ];
   constructor() {
     
   }
@@ -54,6 +65,27 @@ export class AuthServiceProvider {
     
   }
 
+  saveDataUser(data:any){
 
+    return new Promise((resolve,reject)=>{
+      firebase.database().ref("profils").push(data).then((data)=>{
+        resolve(data);
+      }).catch((error)=>{
+        reject(error);
+      });
+    });  
+  }
+
+  getData(){
+    let uid=firebase.auth().currentUser.uid;
+    return new Promise((resolve,reject)=>{
+      firebase.database().ref("profils"+uid).once("value").then((data:DataSnapshot)=>{
+        this.userData=data.val();
+        console.log(data.val());
+      }).catch((error)=>{
+        reject(error);
+      });
+    });
+  }
 
 }
