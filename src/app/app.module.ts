@@ -18,6 +18,7 @@ import { WelcomePage } from '../pages/welcome/welcome';
 import { AuthServiceProvider } from '../providers/auth-service/auth-service';
 import { TimeTableServiceProvider } from '../providers/time-table-service/time-table-service';
 import { EventsPage } from '../pages/events/events';
+import { EventsProvider } from '../providers/events/events';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,8 @@ import { EventsPage } from '../pages/events/events';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthServiceProvider,
-    TimeTableServiceProvider
+    TimeTableServiceProvider,
+    EventsProvider
   ]
 })
 export class AppModule {}

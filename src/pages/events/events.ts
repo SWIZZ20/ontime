@@ -1,25 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NavController, NavParams, MenuController } from 'ionic-angular';
-
-/**
- * Generated class for the EventsPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { EventsProvider } from '../../providers/events/events';
 
 @Component({
   selector: 'page-events',
   templateUrl: 'events.html',
 })
-export class EventsPage {
+export class EventsPage implements OnInit{
+ 
+   public eventsTab=[];
+
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
-    public menuCtrl:MenuController) {
+              public menuCtrl:MenuController,
+              public eventService:EventsProvider) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad EventsPage');
+ ngOnInit(): void {
+   this.eventsTab=this.eventService.evenement;
+   console.log(this.eventsTab);
   }
 
   onToggleMenu(){
