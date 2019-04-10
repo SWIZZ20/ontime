@@ -1,1 +1,33 @@
-<ion-nav [root]="rootPage"></ion-nav>
+
+<ion-menu [content]="content" *ngIf="isAuth==true">
+    <ion-header>
+        <ion-toolbar>
+            <ion-title>MENU</ion-title>
+        </ion-toolbar>
+    </ion-header>
+    <ion-content>
+        <ion-list>
+            <button ion-item (click)="onTogglePage(tabsPage)">
+                <ion-icon name="list"></ion-icon>
+                Accueil
+            </button>
+            <button ion-item (click)="onTogglePage(schoolTimeTablePage)">
+                <ion-icon name="list"></ion-icon>
+                Mon Emploi du Temps
+            </button>
+            <button ion-item (click)="onTogglePage(eventsPage)">
+                    <ion-icon name="list"></ion-icon>
+                    Evénement
+            </button>
+            <button ion-item (click)="onTogglePage(settingsPage)">
+                <ion-icon name="list"></ion-icon>
+                Paramètre
+            </button>
+            <button ion-item (click)="deconnexion()">
+                <ion-icon name="list"></ion-icon>
+                Deconnexion
+            </button>
+        </ion-list>
+    </ion-content>
+</ion-menu>
+<ion-nav [root]="tabsPage" #content></ion-nav>
