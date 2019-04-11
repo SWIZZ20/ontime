@@ -12,12 +12,17 @@ export class SchoolTimeTablePage implements OnInit {
   cours:any;
   jour:string="lundi";
 
-  constructor(public timeTableService1Provider:TimeTableService1Provider){
+  constructor(public timeTableService1Provider:TimeTableService1Provider,
+          public menuCtrl:MenuController){
 
   }
 
  ngOnInit(): void {
     this.cours=this.timeTableService1Provider.cours;
+  }
+
+  onToggleMenu(){
+    this.menuCtrl.open();
   }
 
 }
