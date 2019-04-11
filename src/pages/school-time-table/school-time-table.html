@@ -9,7 +9,7 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding >
+<ion-content padding style="background-color: rgb(248, 44, 129);">
   <!-- style="background-color: rgb(248, 44, 129);"-->
 
   <ion-segment [(ngModel)]="jour">
@@ -36,7 +36,7 @@
         Matin
       </ion-list-header>
       <ion-item *ngFor="let cour of cours[0].matin">
-        <div style="text-align: center;">
+        <div>
           <h2>{{cour.nom}}</h2>
           <p>
             <ion-icon name="person"></ion-icon> {{cour.professeur}}
@@ -55,7 +55,7 @@
         Soir
       </ion-list-header>
       <ion-item *ngFor="let cour of cours[0].soir">
-        <div style="text-align: center;">
+        <div>
           <h2>{{cour.nom}}</h2>
           <p>
             <ion-icon name="person"></ion-icon> {{cour.professeur}}
@@ -75,7 +75,7 @@
         Matin
       </ion-list-header>
       <ion-item *ngFor="let cour of cours[1].matin">
-        <div style="text-align: center;">
+        <div>
           <h2>{{cour.nom}}</h2>
           <p>
             <ion-icon name="person"></ion-icon> {{cour.professeur}}
@@ -93,7 +93,7 @@
         Soir
       </ion-list-header>
       <ion-item *ngFor="let cour of cours[1].soir">
-        <div style="text-align: center;">
+        <div>
           <h2>{{cour.nom}}</h2>
           <p>
             <ion-icon name="person"></ion-icon> {{cour.professeur}}
@@ -113,7 +113,7 @@
         Matin
       </ion-list-header>
       <ion-item *ngFor="let cour of cours[2].matin">
-        <div style="text-align: center;">
+        <div>
           <h2>{{cour.nom}}</h2>
           <p>
             <ion-icon name="person"></ion-icon> {{cour.professeur}}
@@ -131,7 +131,7 @@
         Soir
       </ion-list-header>
       <ion-item *ngFor="let cour of cours[2].soir">
-        <div style="text-align: center;">
+        <div>
           <h2>{{cour.nom}}</h2>
           <p>
             <ion-icon name="person"></ion-icon> {{cour.professeur}}
@@ -151,7 +151,7 @@
         Matin
       </ion-list-header>
       <ion-item *ngFor="let cour of cours[3].matin">
-        <div style="text-align: center;">
+        <div>
           <h2>{{cour.nom}}</h2>
           <p>
             <ion-icon name="person"></ion-icon> {{cour.professeur}}
@@ -169,7 +169,7 @@
         Soir
       </ion-list-header>
       <ion-item *ngFor="let cour of cours[3].soir">
-        <div style="text-align: center;">
+        <div>
           <h2>{{cour.nom}}</h2>
           <p>
             <ion-icon name="person"></ion-icon> {{cour.professeur}}
@@ -189,7 +189,7 @@
         Matin
       </ion-list-header>
       <ion-item *ngFor="let cour of cours[4].matin">
-        <div style="text-align: center;">
+        <div>
           <h2>{{cour.nom}}</h2>
           <p>
             <ion-icon name="person"></ion-icon> {{cour.professeur}}
@@ -207,7 +207,7 @@
         Soir
       </ion-list-header>
       <ion-item *ngFor="let cour of cours[4].soir">
-        <div style="text-align: center;">
+        <div>
           <h2>{{cour.nom}}</h2>
           <p>
             <ion-icon name="person"></ion-icon> {{cour.professeur}}

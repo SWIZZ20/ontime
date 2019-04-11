@@ -122,17 +122,17 @@ export class TimeTableService1Provider {
       soir: [
         {
           nom: 'Libre',
-          professeur: '?',
+          professeur: 'M.Hannafi',
           heureDebut: '14h30',
           heureFin: '16h',
-          salle: "?"
+          salle: "Archimède"
         },
         {
           nom: "Libre",
-          professeur: "?",
+          professeur: "M.Hannafi",
           heureDebut: "16h15",
           heureFin: "17h45",
-          salle: "?"
+          salle: "Archimède"
         }
       ]
     },
@@ -156,17 +156,17 @@ export class TimeTableService1Provider {
       soir: [
         {
           nom: 'Libre',
-          professeur: '?',
+          professeur: 'M.Hannafi',
           heureDebut: '14h30',
           heureFin: '16h',
-          salle: "?"
+          salle: "Archimède"
         },
         {
           nom: "Libre",
-          professeur: "?",
+          professeur: "M.Hannafi",
           heureDebut: "16h15",
           heureFin: "17h45",
-          salle: "?"
+          salle: "Archimède"
         }
       ]
     }
