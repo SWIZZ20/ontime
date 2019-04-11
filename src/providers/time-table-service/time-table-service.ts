@@ -28,14 +28,14 @@ export class TimeTableServiceProvider {
           professeur: "M.Kitane",
           heureDebut: "14h30",
           heureFin: "16h",
-          salle: "Tp électronique"
+          salle: "Tp "
         },
         {
           nom: "TP  Electronique",
           professeur: "M.Kitane",
           heureDebut: "16h15",
           heureFin: "17h45",
-          salle: "Tp électronique"
+          salle: "Tp "
         },
       ]
     },

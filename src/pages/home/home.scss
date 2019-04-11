@@ -37,5 +37,31 @@ page-home {
         -webkit-transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
         transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
     }
+    .grandTitre{
+        background-color: white;
+        border-radius: 5px;
+        height: 45px;
+        font-size: 1.4em; 
+        text-align: center;
+        padding-top: 5px;
+    }
 
+    .petitTitre{
+        color:white;
+        font-size:1.2em;
+        text-align:center;
+        margin: 10px 0;
+    }
+
+    .grid{
+        background-color: rgba(255,255,255,0.19);
+        border-radius: 10px;
+    }
+    .cour{
+        background-color: white;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+
+ 
 }
