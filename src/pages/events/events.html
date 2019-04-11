@@ -9,28 +9,31 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding  class="tutorial-page">
+<ion-content padding style="background-color: rgb(248, 44, 129);" class="tutorial-page">
  
-    <ion-slides pager>
-        <ion-slide *ngFor="let evenement of eventsTab">
-          <img [src]="evenement.imageUrl" class="slide-image"/>
-          <h2 class="slide-title" [innerHTML]="evenement.title"></h2>
-          <p [innerHTML]="evenement.description"></p>
-          <div style="display:flex;justify-content:space-between">
-            <div>
+  <ion-slides pager>
+    <ion-slide *ngFor="let evenement of eventsTab">
+      <img [src]="evenement.imageUrl" class="slide-image"/>
+      <h2 class="slide-title" [innerHTML]="evenement.title"></h2>
+      <p [innerHTML]="evenement.description"></p>
+          
+      <ion-grid>
+        <ion-row >
+          <ion-col>
               <ion-icon name="pin"></ion-icon>
               {{evenement.lieu}}
-            </div>
-            <div>
-                <ion-icon name="calendar"></ion-icon>
-                {{evenement.date}}
-              </div>
-              <div>
-                  <ion-icon name="time"></ion-icon>
-                  {{evenement.heure}}
-                </div>
-          </div>
+          </ion-col>
+          <ion-col>
+              <ion-icon name="calendar"></ion-icon>
+              {{evenement.date}}
+          </ion-col>
+          <ion-col>
+              <ion-icon name="time"></ion-icon>
+              {{evenement.heure}}
+          </ion-col>
+        </ion-row>
+      </ion-grid>
           <button ion-button clear>Je participe </button>
-        </ion-slide>
-      </ion-slides>
+    </ion-slide>
+  </ion-slides>
 </ion-content>

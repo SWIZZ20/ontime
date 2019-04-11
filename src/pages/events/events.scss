@@ -17,6 +17,7 @@
       max-height: 50%;
       max-width: 60%;
       margin: 18px 0;
+      border-radius: 50%;
     }
   
     b {
@@ -50,6 +51,35 @@
     ion-icon {
         display: inline-block;
         font-size: 1.2em;
-        color: #f82c81; 
+        color:#f82c81; 
     }
+
+    .swiper-slide {
+      text-align: center;
+      position: relative;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-flex-shrink: 0;
+      -ms-flex-negative: 0;
+      flex-shrink: 0;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      font-size: 18px;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      background-color: white;
+      border-radius: 20px;
+  }
+
+
   }
