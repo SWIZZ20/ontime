@@ -10,7 +10,7 @@ import { SingleTaskPage } from '../single-task/single-task';
 })
 export class HomePage implements OnInit{
   
-  public EmploiDuTemps=[];
+  public EmploiDuTemps:any;
   public EmploiEtude=[];
   constructor(public navCtrl: NavController, 
     public timeService : TimeTableServiceProvider,
@@ -19,13 +19,15 @@ export class HomePage implements OnInit{
 
   }
   ngOnInit(): void {
-    let i=0;
+   /* let i=0;
     for(i=0;i<this.timeService.generalTimeTable.length;i++){
       if(this.timeService.generalTimeTable[i].niveau==="1 TC" && this.timeService.generalTimeTable[i].jour==0){
         this.EmploiDuTemps=this.timeService.generalTimeTable[i].cours;
         this.EmploiEtude=this.timeService.generalTimeTable[i+1].cours;
       }
-    }
+    }*/
+    this.EmploiDuTemps=this.timeService.cours[0];
+    this.EmploiEtude=this.timeService.etudes[0];
   }
 
   goToSingleSubjectsPage(cour){
