@@ -1,5 +1,7 @@
 {
   "name": "firebase-int",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "ionic-angular"
 }
