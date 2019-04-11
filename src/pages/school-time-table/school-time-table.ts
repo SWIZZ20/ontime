@@ -1,28 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NavController, NavParams, MenuController } from 'ionic-angular';
-
-/**
- * Generated class for the SchoolTimeTablePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { TimeTableService1Provider } from '../../providers/time-table-service1/time-table-service1';
 
 @Component({
   selector: 'page-school-time-table',
   templateUrl: 'school-time-table.html',
 })
-export class SchoolTimeTablePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,
-    public menuCtrl:MenuController) {
+export class SchoolTimeTablePage implements OnInit {
+  
+  cours:any;
+  jour:string="lundi";
+
+  constructor(public timeTableService1Provider:TimeTableService1Provider){
+
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad SchoolTimeTablePage');
+ ngOnInit(): void {
+    this.cours=this.timeTableService1Provider.cours;
   }
 
-  onToggleMenu(){
-    this.menuCtrl.open();
-  }
 }

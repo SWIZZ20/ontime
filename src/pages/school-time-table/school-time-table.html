@@ -9,6 +9,219 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding style="background-color: rgb(248, 44, 129);">
+<ion-content padding>
+  <!-- style="background-color: rgb(248, 44, 129);"-->
+
+  <ion-segment [(ngModel)]="jour">
+    <ion-segment-button value="lundi">
+      lundi
+    </ion-segment-button>
+    <ion-segment-button value="mardi">
+      mardi
+    </ion-segment-button>
+    <ion-segment-button value="mercredi">
+      mercredi
+    </ion-segment-button>
+    <ion-segment-button value="jeudi">
+      jeudi
+    </ion-segment-button>
+    <ion-segment-button value="vendredi">
+      vendredi
+    </ion-segment-button>
+  </ion-segment>
+
+  <div [ngSwitch]="jour">
+    <ion-list *ngSwitchCase="'lundi'">
+      <ion-list-header>
+        Matin
+      </ion-list-header>
+      <ion-item *ngFor="let cour of cours[0].matin">
+        <div style="text-align: center;">
+          <h2>{{cour.nom}}</h2>
+          <p>
+            <ion-icon name="person"></ion-icon> {{cour.professeur}}
+          </p>
+
+          <p>
+            <ion-icon name="time"></ion-icon> heure début: {{cour.heureDebut}} -
+            <ion-icon name="time"></ion-icon> heure de fin :{{cour.heureFin}}
+          </p>
+          <p>
+            <ion-icon name="pin"></ion-icon> {{cour.salle}}
+          </p>
+        </div>
+      </ion-item>
+      <ion-list-header>
+        Soir
+      </ion-list-header>
+      <ion-item *ngFor="let cour of cours[0].soir">
+        <div style="text-align: center;">
+          <h2>{{cour.nom}}</h2>
+          <p>
+            <ion-icon name="person"></ion-icon> {{cour.professeur}}
+          </p>
+          <p>
+            <ion-icon name="time"></ion-icon> heure début: {{cour.heureDebut}} -
+            <ion-icon name="time"></ion-icon> heure de fin :{{cour.heureFin}}
+          </p>
+          <p>
+            <ion-icon name="pin"></ion-icon> {{cour.salle}}
+          </p>
+        </div>
+      </ion-item>
+    </ion-list>
+    <ion-list *ngSwitchCase="'mardi'">
+      <ion-list-header>
+        Matin
+      </ion-list-header>
+      <ion-item *ngFor="let cour of cours[1].matin">
+        <div style="text-align: center;">
+          <h2>{{cour.nom}}</h2>
+          <p>
+            <ion-icon name="person"></ion-icon> {{cour.professeur}}
+          </p>
+          <p>
+            <ion-icon name="time"></ion-icon> heure début: {{cour.heureDebut}} -
+            <ion-icon name="time"></ion-icon> heure de fin :{{cour.heureFin}}
+          </p>
+          <p>
+            <ion-icon name="pin"></ion-icon> {{cour.salle}}
+          </p>
+        </div>
+      </ion-item>
+      <ion-list-header>
+        Soir
+      </ion-list-header>
+      <ion-item *ngFor="let cour of cours[1].soir">
+        <div style="text-align: center;">
+          <h2>{{cour.nom}}</h2>
+          <p>
+            <ion-icon name="person"></ion-icon> {{cour.professeur}}
+          </p>
+          <p>
+            <ion-icon name="time"></ion-icon> heure début: {{cour.heureDebut}} -
+            <ion-icon name="time"></ion-icon> heure de fin :{{cour.heureFin}}
+          </p>
+          <p>
+            <ion-icon name="pin"></ion-icon> {{cour.salle}}
+          </p>
+        </div>
+      </ion-item>
+    </ion-list>
+    <ion-list *ngSwitchCase="'mercredi'">
+      <ion-list-header>
+        Matin
+      </ion-list-header>
+      <ion-item *ngFor="let cour of cours[2].matin">
+        <div style="text-align: center;">
+          <h2>{{cour.nom}}</h2>
+          <p>
+            <ion-icon name="person"></ion-icon> {{cour.professeur}}
+          </p>
+          <p>
+            <ion-icon name="time"></ion-icon> heure début: {{cour.heureDebut}} -
+            <ion-icon name="time"></ion-icon> heure de fin :{{cour.heureFin}}
+          </p>
+          <p>
+            <ion-icon name="pin"></ion-icon> {{cour.salle}}
+          </p>
+        </div>
+      </ion-item>
+      <ion-list-header>
+        Soir
+      </ion-list-header>
+      <ion-item *ngFor="let cour of cours[2].soir">
+        <div style="text-align: center;">
+          <h2>{{cour.nom}}</h2>
+          <p>
+            <ion-icon name="person"></ion-icon> {{cour.professeur}}
+          </p>
+          <p>
+            <ion-icon name="time"></ion-icon> heure début: {{cour.heureDebut}} -
+            <ion-icon name="time"></ion-icon> heure de fin :{{cour.heureFin}}
+          </p>
+          <p>
+            <ion-icon name="pin"></ion-icon> {{cour.salle}}
+          </p>
+        </div>
+      </ion-item>
+    </ion-list>
+    <ion-list *ngSwitchCase="'jeudi'">
+      <ion-list-header>
+        Matin
+      </ion-list-header>
+      <ion-item *ngFor="let cour of cours[3].matin">
+        <div style="text-align: center;">
+          <h2>{{cour.nom}}</h2>
+          <p>
+            <ion-icon name="person"></ion-icon> {{cour.professeur}}
+          </p>
+          <p>
+            <ion-icon name="time"></ion-icon> heure début: {{cour.heureDebut}} -
+            <ion-icon name="time"></ion-icon> heure de fin :{{cour.heureFin}}
+          </p>
+          <p>
+            <ion-icon name="pin"></ion-icon> {{cour.salle}}
+          </p>
+        </div>
+      </ion-item>
+      <ion-list-header>
+        Soir
+      </ion-list-header>
+      <ion-item *ngFor="let cour of cours[3].soir">
+        <div style="text-align: center;">
+          <h2>{{cour.nom}}</h2>
+          <p>
+            <ion-icon name="person"></ion-icon> {{cour.professeur}}
+          </p>
+          <p>
+            <ion-icon name="time"></ion-icon> heure début: {{cour.heureDebut}} -
+            <ion-icon name="time"></ion-icon> heure de fin :{{cour.heureFin}}
+          </p>
+          <p>
+            <ion-icon name="pin"></ion-icon> {{cour.salle}}
+          </p>
+        </div>
+      </ion-item>
+    </ion-list>
+    <ion-list *ngSwitchCase="'vendredi'">
+      <ion-list-header>
+        Matin
+      </ion-list-header>
+      <ion-item *ngFor="let cour of cours[4].matin">
+        <div style="text-align: center;">
+          <h2>{{cour.nom}}</h2>
+          <p>
+            <ion-icon name="person"></ion-icon> {{cour.professeur}}
+          </p>
+          <p>
+            <ion-icon name="time"></ion-icon> heure début: {{cour.heureDebut}} -
+            <ion-icon name="time"></ion-icon> heure de fin :{{cour.heureFin}}
+          </p>
+          <p>
+            <ion-icon name="pin"></ion-icon> {{cour.salle}}
+          </p>
+        </div>
+      </ion-item>
+      <ion-list-header>
+        Soir
+      </ion-list-header>
+      <ion-item *ngFor="let cour of cours[4].soir">
+        <div style="text-align: center;">
+          <h2>{{cour.nom}}</h2>
+          <p>
+            <ion-icon name="person"></ion-icon> {{cour.professeur}}
+          </p>
+          <p>
+            <ion-icon name="time"></ion-icon> heure début: {{cour.heureDebut}} -
+            <ion-icon name="time"></ion-icon> heure de fin :{{cour.heureFin}}
+          </p>
+          <p>
+            <ion-icon name="pin"></ion-icon> {{cour.salle}}
+          </p>
+        </div>
+      </ion-item>
+    </ion-list>
+  </div>
 
 </ion-content>

@@ -19,6 +19,7 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
 import { TimeTableServiceProvider } from '../providers/time-table-service/time-table-service';
 import { EventsPage } from '../pages/events/events';
 import { EventsProvider } from '../providers/events/events';
+import { TimeTableService1Provider } from '../providers/time-table-service1/time-table-service1';
 
 @NgModule({
   declarations: [
@@ -60,7 +61,8 @@ import { EventsProvider } from '../providers/events/events';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthServiceProvider,
     TimeTableServiceProvider,
-    EventsProvider
+    EventsProvider,
+    TimeTableService1Provider
   ]
 })
 export class AppModule {}
