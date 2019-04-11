@@ -82,11 +82,11 @@
     (click)="goToSingleSubjectsPage(cour)" primary>
       <div item-start style="background-color: rgb(248, 44, 129); height: 50px;width: 50px; border-radius: 50%;"></div>
       <div >
-        <h2>{{cour.nom}}</h2>
+        <h2 class="nomCours">{{cour.nom}}</h2>
         <ion-icon name="time"></ion-icon>
         {{cour.heureDebut}} - {{cour.heureFin}}
       </div>
-      <div item-end>
+      <div>
           <ion-icon name="pin"></ion-icon>
           {{cour.salle}}
       </div>
@@ -96,11 +96,11 @@
     (click)="goToSingleSubjectsPage(cour)" primary>
       <div item-start style="background-color: rgb(248, 44, 129); height: 50px;width: 50px; border-radius: 50%;"></div>
       <div >
-        <h2>{{cour.nom}}</h2>
+        <h2 class="nomCours">{{cour.nom}}</h2>
         <ion-icon name="time"></ion-icon>
         {{cour.heureDebut}} - {{cour.heureFin}}
       </div>
-      <div item-end>
+      <div >
           <ion-icon name="pin"></ion-icon>
           {{cour.salle}}
       </div>
@@ -113,13 +113,10 @@
       (click)="goToSingleTaskPage(etude)">
       <div item-start style="background-color: rgb(248, 44, 129); height: 50px;width: 50px; border-radius: 50%;"></div>
       <div>
-          <h2>{{etude.nom}}</h2>
+          <h2 class="nomCours">{{etude.nom}}</h2>
           <ion-icon name="time"></ion-icon>
           {{etude.heureDebut}} - {{etude.heureFin}}
-        </div>
-        <div item-end>
-          <ion-icon name="pin"></ion-icon>
-        </div>
+      </div>
       </button>
     </ion-list>
   

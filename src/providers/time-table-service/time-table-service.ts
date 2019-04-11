@@ -28,14 +28,14 @@ export class TimeTableServiceProvider {
           professeur: "M.Kitane",
           heureDebut: "14h30",
           heureFin: "16h",
-          salle: "Tp "
+          salle: "Tp élect"
         },
         {
           nom: "TP  Electronique",
           professeur: "M.Kitane",
           heureDebut: "16h15",
           heureFin: "17h45",
-          salle: "Tp "
+          salle: "Tp élect"
         },
       ]
     },
@@ -69,7 +69,7 @@ export class TimeTableServiceProvider {
           professeur: "M.N'Guadi",
           heureDebut: "16h15",
           heureFin: "17h45",
-          salle: "Tp électronique"
+          salle: "Tp élect"
         }
       ]
     },
@@ -80,14 +80,14 @@ export class TimeTableServiceProvider {
           professeur: "?",
           heureDebut: "9h",
           heureFin: "10h30h",
-          salle: "?"
+          salle: "Molière"
         },
         {
           nom: "Libre",
           professeur: "?",
           heureDebut: "10h45",
           heureFin: "12h15",
-          salle: "?"
+          salle: "Molière"
         }
       ],
       soir: [
@@ -103,7 +103,7 @@ export class TimeTableServiceProvider {
           professeur: "M.Hannafi",
           heureDebut: "16h15",
           heureFin: "17h45",
-          salle: "Tp électronique"
+          salle: "Tp élect"
         }
       ]
     },
