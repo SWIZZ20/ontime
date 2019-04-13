@@ -1,12 +1,7 @@
+import { AuthServiceProvider } from './../../providers/auth-service/auth-service';
 import { Component } from '@angular/core';
-import { NavController, NavParams, MenuController } from 'ionic-angular';
+import { NavController, MenuController } from 'ionic-angular';
 
-/**
- * Generated class for the SettingsPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @Component({
   selector: 'page-settings',
@@ -14,13 +9,25 @@ import { NavController, NavParams, MenuController } from 'ionic-angular';
 })
 export class SettingsPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,
-    public menuCtrl:MenuController) {
+  public user=[];
+  constructor(public navCtrl: NavController,
+    public menuCtrl:MenuController, public authService:AuthServiceProvider) {
+
+     let val= this.authService.getuserdetails();
+      val.then(data=>{
+       this.user.push({
+         nom:data['nom'],
+         prenom:data['prenom'],
+         niveau:data['niveau'],
+         residence:data['adresse']
+       })
+      }).catch(error=>{
+        console.log(error);
+      });
+
+      console.log(this.user);
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad SettingsPage');
-  }
 
   onToggleMenu(){
     this.menuCtrl.open();

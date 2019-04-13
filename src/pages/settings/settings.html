@@ -11,4 +11,9 @@
 
 <ion-content padding style="background-color: rgb(248, 44, 129);">
 
+<ion-list>
+  <ion-item *ngFor="let us of user">
+    {{us.nom}}
+  </ion-item>
+</ion-list>
 </ion-content>

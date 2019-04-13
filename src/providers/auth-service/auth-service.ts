@@ -1,10 +1,14 @@
 import { Injectable } from '@angular/core';
 import * as firebase from 'firebase';
-import DataSnapshot=firebase.database.DataSnapshot;
+import DataSnapshot= firebase.database.DataSnapshot;
+import { Subject } from 'rxjs';
+import { AngularFireAuth } from 'angularfire2/auth';
 
 @Injectable()
 export class AuthServiceProvider {
   public userData=[];
+
+  userData$= new Subject();
   public niveau=[{
     nom:"1 TC" 
   },
@@ -15,8 +19,27 @@ export class AuthServiceProvider {
     nom:"1 MAN" 
   }
   ];
-  constructor() {
+
+  firedata = firebase.database().ref('profils');
+  constructor( public afAuth: AngularFireAuth) {
     
+  }
+
+  getuserdetails(){
+
+    var promise = new Promise((resolve , reject) => {
+      this.firedata.child(firebase.auth().currentUser.uid).once('value', (snapshot) => {
+        resolve(snapshot.val());
+      }).catch((err) => {
+        reject(err);
+      })
+    })
+    return promise;
+
+  }
+
+  emitsData() {
+    this.userData$.next(this.userData.slice());
   }
 
   singIn(email, password)
@@ -65,26 +88,39 @@ export class AuthServiceProvider {
     
   }
 
-  saveDataUser(data:any){
+  saveData(niveau,nom,prenom,residence,telephone) {
+    this.firedata.child(this.afAuth.auth.currentUser.uid).set({
+      uid:this.afAuth.auth.currentUser.uid,
+      niveau:niveau,
+      nom:nom,
+      prenom:prenom,
+      telephone: telephone,
+      adresse: residence,
+    }).then((data)=>{
+      return data;
+    }).catch((err)=>{
 
-    return new Promise((resolve,reject)=>{
-      firebase.database().ref("profils").push(data).then((data)=>{
-        resolve(data);
-      }).catch((error)=>{
-        reject(error);
-      });
-    });  
+    })
   }
 
-  getData(){
-    let uid=firebase.auth().currentUser.uid;
-    return new Promise((resolve,reject)=>{
-      firebase.database().ref("profils"+uid).once("value").then((data:DataSnapshot)=>{
-        this.userData=data.val();
-        console.log(data.val());
-      }).catch((error)=>{
-        reject(error);
-      });
+  retrieveData() {
+    return new Promise((resolve, reject) => {
+      firebase.database().ref('profils').once('value').then(
+        (data: DataSnapshot) => {
+          resolve(data);
+          console.log(firebase.database().ref('profils'+firebase.auth().currentUser.uid).once('value'))
+        }, (error) => {
+          reject(error);
+        }
+      );
+    });
+  }
+
+  fonctionR(){
+    var userId = firebase.auth().currentUser.uid;
+     return firebase.database().ref('/profils/').once('value').then((DataSnapshot)=> {
+      let username = (DataSnapshot.val() && DataSnapshot.val().nom) || 'Anonymous';
+       console.log("user name:"+username)
     });
   }
 

@@ -14,19 +14,20 @@ import { SchoolTimeTablePage } from '../pages/school-time-table/school-time-tabl
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = TabsPage;
+  rootPage:any = UsersInfosPage;
   public tabsPage=TabsPage;
   public schoolTimeTablePage=SchoolTimeTablePage;
   public settingsPage=SettingsPage;
   public eventsPage=EventsPage;
   public isAuth:boolean=false;
+  public config;
   @ViewChild('content') content:NavController;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen,
     public menuController:MenuController) {
     platform.ready().then(() => {
 
-      let config = {
+      this.config = {
         apiKey: "AIzaSyCRpmA6mipjQ7v_yU2P98zDLdGHchjHSwA",
         authDomain: "timeapp-49d70.firebaseapp.com",
         databaseURL: "https://timeapp-49d70.firebaseio.com",
@@ -34,7 +35,8 @@ export class MyApp {
         storageBucket: "timeapp-49d70.appspot.com",
         messagingSenderId: "68310043430"
       };
-      firebase.initializeApp(config);
+      firebase.initializeApp(this.config);
+      
       firebase.auth().onAuthStateChanged((user)=>{
         if(user){
           this.isAuth=true;

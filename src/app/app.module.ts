@@ -20,6 +20,9 @@ import { TimeTableServiceProvider } from '../providers/time-table-service/time-t
 import { EventsPage } from '../pages/events/events';
 import { EventsProvider } from '../providers/events/events';
 import { TimeTableService1Provider } from '../providers/time-table-service1/time-table-service1';
+import {AngularFireModule} from 'angularfire2';
+import {AngularFireDatabaseModule} from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 
 @NgModule({
   declarations: [
@@ -38,6 +41,16 @@ import { TimeTableService1Provider } from '../providers/time-table-service1/time
   ],
   imports: [
     BrowserModule,
+    AngularFireModule.initializeApp({
+      apiKey: "AIzaSyCRpmA6mipjQ7v_yU2P98zDLdGHchjHSwA",
+      authDomain: "timeapp-49d70.firebaseapp.com",
+      databaseURL: "https://timeapp-49d70.firebaseio.com",
+      projectId: "timeapp-49d70",
+      storageBucket: "timeapp-49d70.appspot.com",
+      messagingSenderId: "68310043430"
+    }),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],

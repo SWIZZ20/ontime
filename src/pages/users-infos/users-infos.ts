@@ -41,19 +41,9 @@ export class UsersInfosPage implements OnInit{
   }
 
   saveData(){
-    this.users.push({
-      nom:this.infoForm.get('nom').value,
-      prenom:this.infoForm.get('prenom').value,
-      niveau:this.infoForm.get('niveau').value,
-      telephone:this.infoForm.get('telephone').value,
-      residence:this.infoForm.get('residence').value
-    });
-    this.authService.userData=this.users;
-    this.authService.saveDataUser(this.users).then((data)=>{
-      console.log(data);
-    }).catch((error)=>{
-      console.log(error);
-    });
+    let val=this.authService.saveData(this.infoForm.get('niveau').value,this.infoForm.get('nom').value,
+    this.infoForm.get('prenom').value,this.infoForm.get('residence').value,this.infoForm.get('telephone').value);
+    console.log(val);
   }
 
 }
